@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Task{% endblock title %}
+
+{% block content %}
+    <div class="w-full flex justify-center">
+        <div>
+        <p class="text-2xl mt-5 text-gray-700 font-bold text-center">Add Your Task</p>
+
+        <form class="" action="" method="post">
+            {% csrf_token %}
+            {% for fm in form %}
+            <span class="text-gray-600 font-bold mt-3">{{fm.label_tag}}</span>
+                 <br> <span class="bg-slate-700">{{fm}}</span> {{fm.error|striptags}} <br> 
+            {% endfor %}
+            <input type="submit" value="Submit" class="p-2 bg-green-500 rounded-md text-white mt-4">
+        </form>
+        </div>
+    </div>
+{% endblock %}

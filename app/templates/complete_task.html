@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Complete task {% endblock %}
+
+{% block content %}
+    <h3 class="text-center text-white w-80 rounded-md mx-auto py-2 font-bold my-5 text-2xl bg-purple-700">Complete Tasks</h3>
+
+    <div class="px-10">
+    <table class="table border-collapse border border-gray-300 w-full ">
+  <thead>
+    <tr>
+      <th class="p-3 border border-gray-300">Task Title</th>
+      <th class="p-3 border border-gray-300">Task Description</th>
+      <th class="p-3 border border-gray-300">Status</th>
+  </thead>
+  <tbody>
+    {% for item in data %} 
+    <tr>
+      <td class="p-3 border border-gray-300">{{item.task_title}}</td>
+      <td class="p-3 border border-gray-300">{{item.task_description}}</td>
+      <td class="p-3 border border-gray-300">Complete</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock content %}
